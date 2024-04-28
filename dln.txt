@@ -574,6 +574,13 @@ TeleportService = game:GetService("TeleportService")
 TeleportService:Teleport(17283498564, game.Players.LocalPlayer, game.PlaceId) 
 end)
 
+OthersSection:NewButton("✅Client Replication✅", "✅Client Replication✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(10218821851, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
 OthersSection:NewButton("✅MM2✅", "✅MM2✅", function()
 
 game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
