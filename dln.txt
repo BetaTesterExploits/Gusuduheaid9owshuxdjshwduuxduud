@@ -334,6 +334,25 @@ OthersSection:NewButton("⬛KRNL Executor⬛", "⬛KRNL Executor⬛", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/wtfplayer/redemption/main/krnlnoui.lua"))()
 end)
 
+OthersSection:NewButton("🟥Codex Executor🟥", "🟥Codex Executor🟥", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FurkyYT/stuff/main/mainAndroid"))()
+end)
+
+OthersSection:NewButton("🟧Vega Executor🟧", "🟧Vega Executor🟧", function()
+
+executecode(game:HttpGet("https://gitlab.com/marsqq/vegax4/-/raw/main/UI"))
+end)
+
+OthersSection:NewButton("🟨Evon Executor🟨", "🟨Evon Executor🟨", function()
+
+executecode(game:HttpGet("https://raw.githubusercontent.com/SkieAdmin/EvonAndroidGUI/main/EvonRBLX.lua"))
+end)
+
+OthersSection:NewButton("⬜Trigon Executor⬜", "⬜Trigon Executor⬜", function()
+
+executecode(game:HttpGet("https://raw.githubusercontent.com/relbaldski/bald/main/baldscript.lua"))
+end)
 
 local OthersTab = Window:NewTab("Animation R15")
 local OthersSection = OthersTab:NewSection("Animation R15")
@@ -649,7 +668,7 @@ end)
 
 OthersSection:NewButton("🌀Blade Ball🌀", "🌀Blade ball🌀", function()
 
-loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Blade-Ball-Drop-Farm-10716"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EminenceXLua/Blade-your-Balls/main/BladeBallLoader.lua"))()
 end)
 
 OthersSection:NewButton("🪝Prison Life🪝", "🪝Prison Life🪝", function()
@@ -661,15 +680,44 @@ OthersSection:NewButton("🐕Pets Trading🐕", "🐕Pets Trading🐕", function
    loadstring(game:HttpGet('https://pastebin.com/raw/QfBaVwEL'))()
 end)
 
+OthersSection:NewButton("🚗Car Dealership Tycoon🚗", "🚗Car Dealership Tycoon🚗", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/zAuR0JUT"))()
+end)
+
+OthersSection:NewButton("🏃Legends Of Speed🏃", "Legends Of Speed🏃", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/mqGPg69N"))()
+end)
+
+OthersSection:NewButton("🚧Prison Life🚧", " 🚧Prison Life🚧", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GwnStefano/NexusHub/main/Main", true))()
+end)
+
+OthersSection:NewButton("🚪Doors🚪", "🚪Doors🚪", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))
+end)
 
 OthersSection:NewButton("🗡Murder Mystery 2🗡", "🗡Murder Mystery 2🗡", function()
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Drifter0507/GUIS/main/MURDER%20MYSTERY%202", true))();
 end)
 
+OthersSection:NewButton("🐝Bee Swarm Simulator🐝", "🐝Bee Swarm Simulator🐝", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Histy"))()
+end)
+
 OthersSection:NewButton("🐵Adopt Me🐵", "🐵Adopt Me🐵", function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/Roblox-Scripts/main/Adopt-Me/Adopt-Me-Auto-Race.lua"))()
+end)
+
+OthersSection:NewButton("🍎Blox Fruits🍎", "🍎Blox Fruits🍎", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Yuri/main/Winterhub_V2.lua"))()
 end)
 
 local CreatorTab = Window:NewTab("ℹ️Infoℹ️")
