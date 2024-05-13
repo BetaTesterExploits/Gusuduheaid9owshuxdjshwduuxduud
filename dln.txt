@@ -1,4 +1,43 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/FybBQP3m"))()
+local guiyyy = Instance.new("ScreenGui")
+local TweenService = game:GetService("TweenService")
+  guiyyy.Name = "LoadScreen"
+  guiyyy.Parent = game.CoreGui
+
+  local loadscreen = Instance.new("ImageLabel", guiyyy)
+  Instance.new("UICorner", loadscreen)
+   
+  local label = Instance.new("TextLabel", guiyyy) 
+  label.Size = UDim2.new(0.233,0,0.075,0)
+  label.Position = UDim2.new(0.5,0,0.740,0)
+  label.BackgroundTransparency = 1
+  label.TextTransparency = 1
+  label.AnchorPoint = Vector2.new(0.5,0.5)
+  label.Text = "Avtor Hub"
+  label.TextScaled = true
+  label.Font = Enum.Font.Gotham
+  label.TextColor3 = Color3.fromRGB(255, 255, 255)
+  
+  loadscreen.UICorner.CornerRadius = UDim.new(0.125,0)
+  loadscreen.Size = UDim2.new(0.233,0,0.4,0)
+  loadscreen.Image = "http://www.roblox.com/asset/?id=14890616326"
+  loadscreen.Position = UDim2.new(0.5,0,0.5,0)
+  loadscreen.AnchorPoint = Vector2.new(0.5,0.5)
+  loadscreen.BorderSizePixel = 0
+  loadscreen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  loadscreen.ImageTransparency = 1
+  loadscreen.BackgroundTransparency = 1
+
+  task.wait(0.5)
+
+  TweenService:Create(loadscreen, TweenInfo.new(1.5), {ImageTransparency = 0, BackgroundTransparency = 0}):Play()
+  TweenService:Create(label, TweenInfo.new(1.5), {TextTransparency = 0}):Play()
+  task.wait(3)
+  TweenService:Create(loadscreen, TweenInfo.new(1.5), {ImageTransparency = 1, BackgroundTransparency = 1}):Play()
+  TweenService:Create(label, TweenInfo.new(1.5), {TextTransparency = 1}):Play()
+  task.wait(1.5)
+  guiyyy:Destroy()
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/qFwwNYxj"))()
  
 local Window = Library.CreateLib("🔳 Avtor Hub🔳", "LightTheme")
  
@@ -13,6 +52,24 @@ end)
 PlrSection:NewSlider("🔝Jump Power🔝", "Set you JumpPower", 250, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
+
+PlrSection:NewToggle("🔁Fov Changer🔁", "ToggleInfo", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
+end)
+
+PlrSection:NewToggle("♨️OFF Gravity♨️", "ToggleInfo", function(state)
+    if state then
+        game.Workspace.Gravity = 0
+    else
+        game.Workspace.Gravity = 190
+    end
+end)
+
+local PlrSection = PlrTab:NewSection("😎scripters won't be able to fling you😎")
 
 PlrSection:NewButton("✅Antifling ON✅", "Telekinesis (cars and other),", function()
     _G.AntiFlingToggled = true
@@ -43,7 +100,7 @@ PlrSection:NewButton("💢Telekinesis FE💢", "Telekinesis (cars and other),", 
 end)
 
 
-PlrSection:NewButton("Invisibility FE", "📴Invisibility📴", function()
+PlrSection:NewButton("📴Invisibility FE📴", "📴Invisibility📴", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Invisible%20Gui'))()
 end)
 
@@ -51,7 +108,7 @@ PlrSection:NewButton("🧲Fling All🧲", "🧲Fling All🧲", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
 end)
 
-PlrSection:NewButton("FullBrightness", "🌫Invisibility🌫", function()
+PlrSection:NewButton("🌫️FullBrightness🌫️", "🌫Invisibility🌫", function()
     local Light = game:GetService("Lighting")
  
 function dofullbright()
@@ -63,6 +120,41 @@ end
 dofullbright()
  
 Light.LightingChanged:Connect(dofullbright)
+end)
+
+local OthersTab = Window:NewTab("Dev Scripts")
+local OthersSection = OthersTab:NewSection("Some Scripts Need To Function In The Real Game")
+OthersSection:NewTextBox("💾Script Executer💾","Execute Scripts", function(txt)
+loadstring(txt)()
+end)
+
+OthersSection:NewButton("💻Remote Spy V2💻", "Make Fe Script or any script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/harisprofanny/d/main/Protected.lua%20(22).txt"))()
+end)
+
+OthersSection:NewButton("🛠️Script Maker🛠️", "🛠️Script Maker🛠️", function()
+   loadstring(game:HttpGet(('https://pastefy.app/EOgPqinS/raw'),true))()
+--Requires 30% Experience creating scripts
+end)
+
+OthersSection:NewButton("🖥️Turtle Spy🖥️", "Make Fe Script or any script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Podroka626/Scripts/main/Turtle%20Spy.txt"))()
+end)
+
+OthersSection:NewButton("🧾Simple Spy🧾", "Make Fe Script or any script", function()
+loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+end)
+
+OthersSection:NewButton("📝CMD-X📝", "Admin Commands", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
+end)
+
+OthersSection:NewButton("📠Dex 2.0.0📠", "Better then dex 4 if your in mobile", function()
+loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+end)
+
+OthersSection:NewButton("🔌Dex 4🔌", "dark mode i guess", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loglizzy/dexV4/main/main.lua'))()
 end)
 
 
@@ -308,12 +400,28 @@ OthersSection:NewButton("💨Float Tool💨", "💨Float Tool💨", function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/eexNNiSx'),true))()
 end)
 
-local OthersTab = Window:NewTab("TARGET")
-local OthersSection = OthersTab:NewSection("TARGET")
+OthersSection:NewButton("❤️‍🔥Key Bind❤️‍🔥", "❤️‍🔥Key Bind❤️‍🔥", function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()
+end)
 
-OthersSection:NewButton("Target (Beta)", "Target (Beta)", function()
+OthersSection:NewButton("🚗FE Car Drift🚗", "🚗FE Car Drift🚗", function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/Avtor1zaTion/Drift-Car/main/Protected_9585695538801054.lua'),true))()
+end)
 
-loadstring(game:HttpGet("https://pastebin.com/raw/NjJeP3ci"))()
+OthersSection:NewButton("🟩Green Screen Gui🟩", "🟩Green Screen Gui🟩", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Green%20Screen'))()
+end)
+
+OthersSection:NewButton("🛠️Super Tools🛠️", "gives you cool tools to use", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+OthersSection:NewButton("⬛White And Black Shaider⬜", "🌠Ping+FPS🌠", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/KvJDt5Zw'))()
+end)
+
+OthersSection:NewButton("🖱️Universal Cursor🖱️", "🖱️Universal Cursor🖱️", function()
+   loadstring(game:HttpGet(('https://pastefy.app/VPqgV9IN/raw'),true))()
 end)
 
 local OthersTab = Window:NewTab("Exploits Gui")
@@ -539,6 +647,172 @@ OthersSection:NewButton("🔫NO FE Suicide🔫", "🔫NO FE Suicide🔫", functi
 loadstring(game:HttpGet(('https://pastebin.com/raw/eziEnqs2'),true))()
 end)
 
+OthersSection:NewButton("🟦Sonic🟦", "🟪Pink RTX🟪", function()
+   --{{Made by Avtor}}--
+
+local p = game.Players.LocalPlayer
+local char = p.Character
+local larm = char["Left Arm"]
+local rarm = char["Right Arm"]
+local lleg = char["Left Leg"]
+local rleg = char["Right Leg"]
+local hed = char.Head
+local torso = char.Torso
+local hum = char.Humanoid
+local weld = Instance.new("Weld",torso)
+weld.Part0 = torso
+
+larm.Transparency = 1
+rarm.Transparency = 1
+lleg.Transparency = 1
+rleg.Transparency = 1
+hed.Transparency = 1
+torso.Transparency = 1
+
+
+local function unequipAccessories(player)
+    local character = player.Character
+    if character then
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            for _, accessory in pairs(humanoid:GetAccessories()) do
+                accessory:Destroy()
+            end
+        end
+    end
+end
+
+unequipAccessories(p)
+
+local train = Instance.new("Part",torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(5,5,5)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0,-5.8,0) * CFrame.Angles(0,math.rad(0),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Offset = Vector3.new(0,-5,0)
+TrainMesh.Scale = Vector3.new(7, 7, 6)
+TrainMesh.MeshId = "rbxassetid://5330562519"
+TrainMesh.TextureId = "rbxassetid://5330562592"
+
+
+
+for i,v in pairs(char:GetChildren()) do
+ if v:IsA("Part") then
+  v.Transparency = 1;
+ elseif v:IsA("Hat") then
+  v:Destroy()
+ elseif v:IsA("Model") then
+  v:Destroy()
+ end
+end
+
+
+local function SFX(id) local s=Instance.new("Sound",torso); s.SoundId = "rbxassetid://"..id; s.Volume = 1; return s; end
+train.Touched:connect(function(p)
+ if p.Parent then
+  if p.Parent:IsA("Model") then
+   if game.Players:FindFirstChild(p.Parent.Name) then
+    if p.Parent.Name ~= game.Players.LocalPlayer.Name then
+     game.Players:FindFirstChild(p.Parent.Name).Character:BreakJoints()
+     local Whistle = SFX(15465429)
+     Whistle:Play()
+    end
+   end
+  end
+ end
+end)
+
+local Music = SFX(35894005)
+Music.Looped = true;
+wait(1)
+Music:Play();
+
+local particleemitter = Instance.new("ParticleEmitter", torso)
+particleemitter.VelocitySpread = 180
+particleemitter.Lifetime = NumberRange.new(5)
+particleemitter.Speed = NumberRange.new(6)
+particleemitter.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(1, 5)})
+particleemitter.RotSpeed = NumberRange.new(-55, 55)
+particleemitter.Rate = 150
+particleemitter.Rotation = NumberRange.new(-55, 55)
+particleemitter.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.7, 0.9), NumberSequenceKeypoint.new(1, 1)})
+particleemitter.LightEmission = 0
+particleemitter.Color = ColorSequence.new(Color3.new(255,255,255), Color3.new(255,255,255)) --Color here
+
+
+
+local plr = game.Players.LocalPlayer
+local chr = plr.Character
+local maus = plr:GetMouse()
+local PGui=plr.PlayerGui
+local lleg = chr["Left Leg"]
+local rleg = chr["Right Leg"]
+local larm = chr["Left Arm"]
+local rarm = chr["Right Arm"]
+local hed = chr.Head
+local rutprt = chr.HumanoidRootPart
+local torso = chr.Torso
+local pseudohead=hed:Clone()
+for i,x in pairs(pseudohead:GetChildren()) do if not x.ClassName:find('Mesh') then x:Destroy() end end
+pseudohead.Name='PseudoHead'
+pseudohead.Parent=chr.Head
+local pseudoweld=Instance.new('Weld',torso)
+pseudoweld.Part0=hed
+pseudoweld.Name='PseudoHeadWeld'
+pseudoweld.Part1=pseudohead
+hed.Transparency=1
+for i,x in pairs(chr:GetChildren()) do
+if x:IsA'HHat' then x:destroy'' end end
+for i,x in pairs(chr:GetChildren()) do
+for a,v in pairs(x:GetChildren()) do
+if v:IsA'CharacterMesh' then v:destroy''
+end
+end
+end
+end)
+
+OthersSection:NewButton("🟥Amogus🟥", "🟥Amogus🟥", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/CdDXY6uy'),true))()
+end)
+
+OthersSection:NewButton("🟪Fake Dominus🟪", "🟪Fake Dominus🟪", function()
+
+--{{Made by Avtor}}--
+
+local p = game.Players.LocalPlayer
+local char = p.Character
+local larm = char["Left Arm"]
+local rarm = char["Right Arm"]
+local lleg = char["Left Leg"]
+local rleg = char["Right Leg"]
+local hed = char.Head
+local torso = char.Torso
+local hum = char.Humanoid
+local weld = Instance.new("Weld",torso)
+weld.Part0 = torso
+
+local train = Instance.new("Part",torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(5,5,5)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0.15,-6.5,0) * CFrame.Angles(0,math.rad(270),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Offset = Vector3.new(0,-5,0)
+TrainMesh.Scale = Vector3.new(1, 1, 1)
+TrainMesh.MeshId = "rbxassetid://4887144927"
+TrainMesh.TextureId = "rbxassetid://4887144975"
+end)
+
 local OthersTab = Window:NewTab("TP Placer")
 local OthersSection = OthersTab:NewSection("TP Placer")
 
@@ -635,6 +909,11 @@ OthersSection:NewButton("🟦System Broken Custom🟦", "🟦System Broken Custo
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/System-Broken-Custom-Avtor-Scripts/main/system%20broken.txt"))()
 end)
 
+OthersSection:NewButton("🟪Pendulum Hub🟪", "🟪Pendulum Hub🟪", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+end)
+
 OthersSection:NewButton("🟥Animation Hub🟥", "🟥Animation Hub🟥", function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
 end)
@@ -644,9 +923,17 @@ OthersSection:NewButton("⬛Ghost Hub⬛", "⬛Ghost Hub⬛", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
 
+OthersSection:NewButton("⬜Equinox Hub⬜", "⬜Equinox Hub⬜", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/wzB1Qh78"))()
+end)
+
 OthersSection:NewButton("🟦Game Hub🟦", "🟦Game Hub🟦", function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
+end)
+
+OthersSection:NewButton("🟫Era Hub🟫", "Loads a gui with some features", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/zRWQnNjS'))()
 end)
 
 OthersSection:NewButton("⬛Atomic Hub⬛", "⬛Atomic Hub⬛", function()
@@ -717,6 +1004,11 @@ OthersSection:NewButton("🐝Bee Swarm Simulator🐝", "🐝Bee Swarm Simulator�
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Histy"))()
 end)
 
+OthersSection:NewButton("🚘A Dusty Trip Dupe🚘", "🚘A Dusty Trip Dupe🚘", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/DustyTripThacScript/main/dupe_pre-release"))("t.me/arceusxscripts")
+setclipboard("https://m.youtube.com/watch?v=tCvyqXbreyI")
+end)
+
 OthersSection:NewButton("🐵Adopt Me🐵", "🐵Adopt Me🐵", function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/Roblox-Scripts/main/Adopt-Me/Adopt-Me-Auto-Race.lua"))()
@@ -729,4 +1021,18 @@ end)
 
 local CreatorTab = Window:NewTab("ℹ️Infoℹ️")
 local CreatorSection = CreatorTab:NewSection("Credits to Avtor1zaTion")
-local CreatorSection = CreatorTab:NewSection("Version 1.8")
+local CreatorSection = CreatorTab:NewSection("Version 1.9")
+
+CreatorSection:NewButton("Copy YT Avtor Scripts Link", "Youtube Avtor Scripts", function()
+
+setclipboard("https://youtube.com/@avtorscripts?si=Pbp9QsfrcDZ5b-nO")
+end)
+
+wait(0.1)
+
+local stroke = Instance.new("UIStroke")
+stroke.Parent = game.CoreGui.AvtorHub.Main
+stroke.Thickness = 3
+while wait() do local hue = tick() % 15 / 15
+ local color = Color3.fromHSV(hue,1,1)     stroke.Color = color
+end
