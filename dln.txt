@@ -1237,6 +1237,10 @@ OthersSection:NewButton("🖱️Universal Cursor🖱️", "🖱️Universal Curs
    loadstring(game:HttpGet(('https://pastefy.app/VPqgV9IN/raw'),true))()
 end)
 
+OthersSection:NewButton("👁️‍🗨️Universal Fly Camera👁️‍🗨️", "❤️‍🔥RTX❤️‍🔥", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/9CDN9Kaj/raw'),true))()
+end)
 
 local OthersTab = Window:NewTab("Animation R15")
 local OthersSection = OthersTab:NewSection("Animation R15")
